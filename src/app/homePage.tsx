@@ -8,7 +8,8 @@ import synapselogo from "./assets/synapselogo.png";
 import bgImage from "./assets/background.png";
 import Events from "./events";
 import Theme from "./theme";
-import CircleLogo from "./assets/SVGID.png";
+// import CircleLogo from "./assets/SVGID.png";
+import Navbar from './navbar';
 import PerformersCarousel from "./carasoul";
 import About from "./about";
 
@@ -32,29 +33,8 @@ export default function HomePage() {
         />
 
         {/* Navigation */}
-        <nav className="relative z-10 p-4 md:p-6 flex justify-between items-center ">
-          {/* Left Logo */}
-          <div className="flex items-center gap-2">
-            <div className="relative w-10 h-10">
-              <Image
-                src={CircleLogo}
-                alt="Synapse Logo"
-                fill
-                className="object-contain"
-                priority
-              />
-            </div>
-          </div>
-
-          {/* Menu Button */}
-          <div className="relative">
-            <button
-              className="text-white text-lg bg-black/40 hover:bg-black/60 p-2 rounded-md focus:outline-none"
-              onClick={toggleMenu}
-            >
-              Menu
-            </button>
-          </div>
+        <nav className="relative z-50 flex justify-between items-center ">
+          <Navbar />
         </nav>
 
         {/* Main Content */}

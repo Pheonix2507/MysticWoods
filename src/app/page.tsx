@@ -4,12 +4,11 @@ import HomePage from "./homePage";
 import Image from 'next/image'
 import { useEffect, useState } from 'react';
 
-
 export default function Home() {
 
   const [progress, setProgress] = useState(0);
   const [loading, setLoading] = useState(true);
-  const loadingTime = 5; // Total loading time in seconds
+  const loadingTime = 1; // Total loading time in seconds
 
   useEffect(() => {
     const interval = 100; // Update interval in milliseconds
