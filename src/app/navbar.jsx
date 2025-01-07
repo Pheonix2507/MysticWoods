@@ -25,11 +25,13 @@ export default function Navbar() {
     };
 
     useEffect(() => {
-        const logo = document.getElementsByClassName("logo")[0];
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            logo.style.transform = `rotate(${0.2 * scrolled}deg)`;
-        })
+        const logo = document.querySelector('.CircleLogo'); 
+        if (logo) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                logo.style.transform = `rotate(${0.2 * scrolled}deg)`;
+            })
+        }
     }, [])
     function opennavbar() {
         const contlogo = document.getElementsByClassName('contlogo')[0];
@@ -57,13 +59,15 @@ export default function Navbar() {
                         height={10}
                         src={CircleLogo}
                     /> */}
-                    <Image
-                        src={CircleLogo}
-                        onClick={handleRedirect} 
-                        alt="Synapse Logo"
-                        className="w-[4rem] h-[4rem]"
-                        priority
-                    />
+                    <div className="CircleLogo flex items-center justify-center">
+                        <Image
+                            src={CircleLogo}
+                            onClick={handleRedirect} 
+                            alt="Synapse Logo"
+                            className="w-fit h-fit sm:w-[4rem] sm:h-[4rem] pointer"
+                            priority
+                        />
+                    </div>
                     <div className='navflex'>
                         <div className='navlinks' onClick={opennavbar} >
                             <div className='navflex2'>
