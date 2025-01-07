@@ -101,7 +101,7 @@ a {
 }
 
 .logo {
-  padding: 1.5rem;
+  /* padding: 1.5rem; */
   /* -webkit-transition: all linear 0.314159265358979s;
   -o-transition: all linear 0.314159265358979s;
   transition: all linear 0.314159265358979s; */
@@ -378,11 +378,11 @@ button {
   }
 
   .navflex {
-      padding-right: 1rem;
+      /* padding-right: 1rem; */
   }
 
   .navflex2 {
-      padding: 0.5rem;
+      /* padding: 0.5rem; */
   }
 
   .backgroundmenuicon {
