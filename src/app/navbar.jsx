@@ -3,7 +3,7 @@ import Image from "next/image";
 import CircleLogo from "./assets/SVGID.png";
 import { useRouter } from 'next/navigation';
 
-import { Roboto } from '@next/font/google';
+import { Roboto } from 'next/font/google';
 import { Almendra_SC } from "next/font/google";
 
 const roboto = Roboto({

@@ -2,7 +2,6 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
 import { Button } from "../components/ui/button";
 import synapselogo from "./assets/synapselogo.png";
 import bgImage from "./assets/background.png";
@@ -14,11 +13,11 @@ import PerformersCarousel from "./carasoul";
 import About from "./about";
 
 export default function HomePage() {
-  const [menuOpen, setMenuOpen] = useState(false);
+  // const [menuOpen, setMenuOpen] = useState(false);
 
-  const toggleMenu = () => {
-    setMenuOpen(!menuOpen);
-  };
+  // const toggleMenu = () => {
+  //   setMenuOpen(!menuOpen);
+  // };
 
   return (
     <>
