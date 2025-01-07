@@ -44,7 +44,7 @@ const TermsAndConditions: React.FC = () => {
         <header className="text-center mb-6">
           <span className={almendra.className}><h1 className="text-white mb-3 text-[5rem]">Terms & Conditions</h1></span>
           <p className="text-gray-300">
-            Welcome to Synapse'25! To ensure a  n enjoyable and hassle-free experience for all attendees, please carefully
+            Welcome to Synapse&apos;25! To ensure a  n enjoyable and hassle-free experience for all attendees, please carefully
             read and adhere to the following terms and conditions:
           </p>
         </header>
@@ -97,8 +97,8 @@ const TermsAndConditions: React.FC = () => {
           />
 
           <p className="text-gray-400 text-sm mt-6">
-            By attending Synapse'25, you agree to abide by these terms and conditions. Failure to comply may result in
-            removal from the festival premises without any refund. We appreciate your cooperation in making Synapse'25 a
+            By attending Synapse&apos;25, you agree to abide by these terms and conditions. Failure to comply may result in
+            removal from the festival premises without any refund. We appreciate your cooperation in making Synapse&apos;25 a
             memorable and magical experience for everyone!
           </p>
         </div>
