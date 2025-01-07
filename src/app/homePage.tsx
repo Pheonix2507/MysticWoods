@@ -11,7 +11,6 @@ import Theme from "./theme";
 import CircleLogo from "./assets/SVGID.png";
 import PerformersCarousel from "./carasoul";
 import About from "./about";
-import MainAboutUS from "./mainAboutUs";
 
 export default function HomePage() {
   const [menuOpen, setMenuOpen] = useState(false);

@@ -1,7 +1,5 @@
 // pages/theme.js
 
-import Head from "next/head";
-import bgImg from "./assets/backgroundP2.jpeg";
 import Image from "next/image";
 import aboutus from "./assets/aboutus.png";
 
@@ -20,10 +18,10 @@ export default function About() {
           />
         </div>
         <p className="mx-auto max-w-2xl text-sm text-white/90  sm:text-xl">
-          Synapse, DAIICT’s annual college fest, unites global artists and
-          creative minds to showcase unique collages, share creative
-          processes, and transforms into a vibrant night of live music, DJ
-          performances, and dance parties, fostering creative connections and
+          Synapse, DAIICT's annual college fest, unites global artists and
+          creative minds to showcase unique collages, share creative
+          processes, and transforms into a vibrant night of live music, DJ
+          performances, and dance parties, fostering creative connections and
           celebrating artistic expression.
         </p>
       </div>

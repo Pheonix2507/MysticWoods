@@ -1,4 +1,4 @@
-import Head from "next/head";
+
 import bgImg from "./assets/backgroundP2.jpeg";
 import Image from "next/image";
 import image3 from "./assets/image3.png";
