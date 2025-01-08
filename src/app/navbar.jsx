@@ -21,11 +21,13 @@ export default function Navbar() {
     const router = useRouter();
 
     useEffect(() => {
-        const logo = document.getElementsByClassName("logo")[0];
-        window.addEventListener('scroll', () => {
-            const scrolled = window.pageYOffset;
-            logo.style.transform = `rotate(${0.2 * scrolled}deg)`;
-        })
+        const logo = document.querySelector('.CircleLogo'); 
+        if (logo) {
+            window.addEventListener('scroll', () => {
+                const scrolled = window.scrollY;
+                logo.style.transform = `rotate(${0.2 * scrolled}deg)`;
+            })
+        }
     }, [])
     function opennavbar() {
         const contlogo = document.getElementsByClassName('contlogo')[0];
