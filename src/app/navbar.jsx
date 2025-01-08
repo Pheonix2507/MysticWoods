@@ -20,10 +20,6 @@ export default function Navbar() {
 
     const router = useRouter();
 
-    const handleRedirect = () => {
-        router.push('/');
-    };
-
     useEffect(() => {
         const logo = document.getElementsByClassName("logo")[0];
         window.addEventListener('scroll', () => {
@@ -59,7 +55,7 @@ export default function Navbar() {
                     /> */}
                     <Image
                         src={CircleLogo}
-                        onClick={handleRedirect} 
+                        onClick={() => router.push('/')} 
                         alt="Synapse Logo"
                         className="w-[4rem] h-[4rem]"
                         priority
@@ -237,8 +233,8 @@ export default function Navbar() {
                                 </svg>
                             </div>
                         </a>
-                        <a className='navptags navp7' href="http://synapse.daiict.ac.in/sy-23/youth.html" >
-                            <span>YouthRun</span>
+                        <div className='navptags navp7'onClick={() => router.push('/Terms-and-condition')} >
+                            <span>Terms And Condition</span>
                             <div className="arrowsvgcontainer">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 475 292"
@@ -262,9 +258,9 @@ export default function Navbar() {
                                     </g>
                                 </svg>
                             </div>
-                        </a>
-                        <div className='navptags navp8' onClick={() => changePageinApp('hackout')} >
-                            <span>HackOut</span>
+                        </div>
+                        <div className='navptags navp8' onClick={() => router.push('/Contact-us')} >
+                            <span>Contact Us</span>
                             <div className="arrowsvgcontainer">
                                 <svg xmlns="http://www.w3.org/2000/svg"
                                     viewBox="0 0 475 292"
