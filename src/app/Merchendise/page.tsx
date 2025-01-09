@@ -4,9 +4,7 @@ import { useEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import Navbar from "../navbar";
-import { useRouter } from "next/navigation";
 import { Almendra_SC } from "next/font/google";
-import { Roboto } from "next/font/google";
 import MerchandisePage from "./merchDisplay";
 import Contact from "../Contact-us/page";
 
@@ -18,7 +16,6 @@ const almendra = Almendra_SC({
 gsap.registerPlugin(ScrollTrigger);
 
 export default function Merchendise() {
-  const router = useRouter();
   const containerRef = useRef<HTMLDivElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
   const titleRef = useRef<HTMLHeadingElement>(null);

@@ -9,7 +9,6 @@ import carasoul1 from "./assets/Carasoul1.png";
 import carasoul2 from "./assets/Carasoul2.png";
 import carasoul3 from "./assets/Carasoul3.png";
 import carasoul4 from "./assets/Carasoul4.png";
-import { Roboto } from "next/font/google";
 import { Almendra_SC } from "next/font/google";
 
 const almendra = Almendra_SC({
