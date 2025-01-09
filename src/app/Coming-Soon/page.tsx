@@ -56,7 +56,7 @@ export default function ComingSoon() {
             >
               Exciting&nbsp;Events&nbsp;Coming&nbsp;Soon&nbsp;&ndash;&nbsp;Special&nbsp;Discounts&nbsp;for&nbsp;DAIICT&nbsp;Students!&nbsp;
               <br />
-              &nbspGet&nbsp;Your&nbsp;Tickets&nbsp;Now&nbsp;at&nbsp;Unbeatable&nbsp;Prices!
+              &nbsp;Get&nbsp;Your&nbsp;Tickets&nbsp;Now&nbsp;at&nbsp;Unbeatable&nbsp;Prices!
             </h2>
             <div className="space-y-4">
               <div className="">
