@@ -8,8 +8,8 @@ import bgImage from "./assets/background.png";
 import Events from "./events";
 import Theme from "./theme";
 import Navbar from "./navbar";
-
 import About from "./about";
+import PerformersCarousel from "./carasoul";
 
 export default function HomePage() {
   return (
@@ -53,7 +53,7 @@ export default function HomePage() {
 
       <Events />
       <Theme />
-      {/* <PerformersCarousel /> */}
+      <PerformersCarousel />
       <About />
       {/* <MainAboutUS /> */}
     </>

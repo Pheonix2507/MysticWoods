@@ -71,7 +71,14 @@ body {
     @apply bg-background text-foreground;
   }
 }
+html,
+body {
+  overflow-x: hidden;
+}
 
+body {
+  position: relative;
+}
 .navbar {
   overflow: auto;
 }
@@ -410,4 +417,34 @@ button {
     transition: all linear 0.614s;
     color: orange;
   }
+}
+
+.size-button {
+  transition: transform 0.2s ease;
+}
+
+.size-button:hover {
+  transform: scale(1.05);
+}
+
+.size-button:active {
+  transform: scale(0.95);
+}
+
+/* Gradient border effect */
+.product-image {
+  position: relative;
+}
+
+.product-image::before {
+  content: "";
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  right: -2px;
+  bottom: -2px;
+  background: linear-gradient(45deg, #3b82f6, #8b5cf6);
+  border-radius: 0.75rem;
+  z-index: -1;
+  opacity: 0.5;
 }
