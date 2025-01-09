@@ -10,7 +10,6 @@ import Theme from "./theme";
 import Navbar from "./navbar";
 import About from "./about";
 import PerformersCarousel from "./carasoul";
-import { useEffect } from "react";
 
 export default function HomePage() {
   return (

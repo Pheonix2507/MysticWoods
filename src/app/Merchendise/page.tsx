@@ -10,11 +10,6 @@ import { Roboto } from "next/font/google";
 import MerchandisePage from "./merchDisplay";
 import Contact from "../Contact-us/page";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
 const almendra = Almendra_SC({
   subsets: ["latin"],
   weight: "400",

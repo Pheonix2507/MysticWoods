@@ -12,11 +12,6 @@ import carasoul4 from "./assets/Carasoul4.png";
 import { Roboto } from "next/font/google";
 import { Almendra_SC } from "next/font/google";
 
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "700"],
-});
-
 const almendra = Almendra_SC({
   subsets: ["latin"],
   weight: "400",
@@ -64,7 +59,7 @@ export default function PerformersCarousel() {
       <section className="overflow-hidden">
         <div ref={triggerRef}>
           <div ref={sectionRef} className="flex h-screen w-[400vw] bg-black">
-            {pages.map((page, index) => (
+            {pages.map((page) => (
               <div
                 key={page.name}
                 className="h-full w-screen flex flex-col items-center justify-center  relative"
