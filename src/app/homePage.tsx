@@ -8,7 +8,7 @@ import bgImage from "./assets/background.png";
 import Events from "./events";
 import Theme from "./theme";
 import Navbar from "./navbar";
-import PerformersCarousel from "./carasoul";
+
 import About from "./about";
 
 export default function HomePage() {

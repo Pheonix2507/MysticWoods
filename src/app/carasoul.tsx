@@ -67,11 +67,7 @@ export default function PerformersCarousel() {
         className="intro-section min-h-screen bg-gradient-to-r from-blue-400 to-purple-600 flex flex-col items-center justify-center p-10"
       >
         <h1 className="text-5xl font-bold text-white mb-6">Upcoming Events</h1>
-        <p className="text-lg text-white text-center max-w-2xl">
-          Join us for an exciting lineup of performances featuring world-class
-          artists! Scroll down to explore the artists and their mesmerizing
-          acts. Let's celebrate art and creativity together.
-        </p>
+        <p className="text-lg text-white text-center max-w-2xl"></p>
         <div className="mt-10">
           <button className="px-6 py-3 text-lg font-semibold bg-white text-purple-600 rounded-md shadow hover:shadow-lg hover:bg-purple-50">
             Learn More
