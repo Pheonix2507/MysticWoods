@@ -8,7 +8,7 @@ import Blueflag from "./assets/Blueflag.svg";
 
 export default function Events() {
   return (
-    <div className="relative w-full h-screen">
+    <div className="event-container relative w-full h-screen">
       {/* Background Image */}
       <Image
         src={bgImg}
