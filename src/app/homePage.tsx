@@ -7,18 +7,11 @@ import synapselogo from "./assets/synapselogo.png";
 import bgImage from "./assets/background.png";
 import Events from "./events";
 import Theme from "./theme";
-// import CircleLogo from "./assets/SVGID.png";
-import Navbar from './navbar';
-import PerformersCarousel from "./carasoul";
+import Navbar from "./navbar";
+
 import About from "./about";
 
 export default function HomePage() {
-  // const [menuOpen, setMenuOpen] = useState(false);
-
-  // const toggleMenu = () => {
-  //   setMenuOpen(!menuOpen);
-  // };
-
   return (
     <>
       <main className="relative min-h-screen w-full overflow-hidden">
@@ -60,7 +53,7 @@ export default function HomePage() {
 
       <Events />
       <Theme />
-      <PerformersCarousel />
+      {/* <PerformersCarousel /> */}
       <About />
       {/* <MainAboutUS /> */}
     </>
