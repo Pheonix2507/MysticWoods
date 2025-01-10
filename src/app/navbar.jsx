@@ -129,7 +129,7 @@ export default function Navbar() {
             </div>
             <div
               className="navptags navp2"
-              onClick={() => router.push("/Merchendise")}
+              onClick={() => router.push("/Coming-Soon")}
             >
               <span>Events</span>
               <div className="arrowsvgcontainer">
@@ -176,7 +176,7 @@ export default function Navbar() {
                 </svg>
               </div>
             </div>
-
+{/*
             <div
               className="navptags navp2"
               onClick={() => router.push("/Merchendise")}
@@ -225,7 +225,7 @@ export default function Navbar() {
                   </g>
                 </svg>
               </div>
-            </div>
+            </div>*/}
 
             {/* <a className='navptags navp3' href="./assets/event_schedule.pdf" >
                             <span>Schedule</span>
