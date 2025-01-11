@@ -20,6 +20,7 @@ const RegistrationForm: React.FC = () => {
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
 
+
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
@@ -35,8 +36,8 @@ const RegistrationForm: React.FC = () => {
   className="flex flex-col-reverse lg:flex-row items-center justify-center min-h-screen px-4 gap-[16rem] bg-cover bg-center">
     <div className="lg:mx-[10rem] flex flex-col-reverse lg:flex-row items-center justify-center min-h-screen bg-transparent px-4 gap-0 lg:gap-[16rem]">
       {/* Registration Form */}
-      <div className="bg-black bg-opacity-50 p-8 rounded-lg shadow-lg w-full max-w-md order-none lg:order-1">
-        <h1 className="text-2xl font-bold text-center mb-6">Create your magical journey</h1>
+      <div className="bg-black bg-opacity-75 p-8 rounded-lg shadow-lg w-full max-w-md order-none lg:order-1">
+        <h1 className="text-2xl text-white font-bold text-center mb-6">Create your magical journey</h1>
         <form onSubmit={handleSubmit} className="space-y-4">
           {/* Name Fields */}
           <div className="flex space-x-4">
@@ -46,7 +47,7 @@ const RegistrationForm: React.FC = () => {
               placeholder="First Name"
               value={formData.first_name}
               onChange={handleChange}
-              className="w-1/2 p-2 border border-gray-300 rounded bg-transparent"
+              className="w-1/2 p-2 border text-white border-gray-300 rounded bg-transparent"
             />
             <input
               type="text"
@@ -54,7 +55,7 @@ const RegistrationForm: React.FC = () => {
               placeholder="Last Name"
               value={formData.last_name}
               onChange={handleChange}
-              className="w-1/2 p-2 border border-gray-300 rounded bg-transparent"
+              className="w-1/2 p-2 border text-white border-gray-300 rounded bg-transparent"
             />
           </div>
 
@@ -65,29 +66,32 @@ const RegistrationForm: React.FC = () => {
             placeholder="Phone Number"
             value={formData.phone_number}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded bg-transparent"
+            maxLength={10}
+            className="w-full p-2 border text-white border-gray-300 rounded bg-transparent"
           />
 
           {/* DOB and Gender */}
+          <div style={{color:'rgba(209 213 219)'}}>
           <div className="flex space-x-4">
             <input
               type="date"
               name="DOB"
               value={formData.DOB}
               onChange={handleChange}
-              className="w-1/2 p-2 border border-gray-300 rounded bg-transparent"
+              className="w-1/2 p-2 border text-white border-gray-300 rounded bg-transparent"
             />
             <select
               name="gender"
               value={formData.gender}
               onChange={handleChange}
-              className="w-1/2 p-2 border border-gray-300 rounded bg-transparent"
+              className="w-1/2 p-2 border text-white border-gray-300 rounded bg-transparent"
             >
               <option value="">Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="other">Other</option>
             </select>
+          </div>
           </div>
 
           {/* Clg */}
@@ -97,7 +101,7 @@ const RegistrationForm: React.FC = () => {
             placeholder="Clg Name"
             value={formData.Clg}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded bg-transparent"
+            className="w-full p-2 border text-white border-gray-300 rounded bg-transparent"
           />
 
           {/* Email */}
@@ -107,7 +111,7 @@ const RegistrationForm: React.FC = () => {
             placeholder="Email"
             value={formData.email}
             onChange={handleChange}
-            className="w-full p-2 border border-gray-300 rounded bg-transparent"
+            className="w-full p-2 border text-white border-gray-300 rounded bg-transparent"
           />
 
           {/* Password */}
@@ -118,7 +122,7 @@ const RegistrationForm: React.FC = () => {
               placeholder="Password"
               value={formData.password}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded bg-transparent"
+              className="w-full p-2 border text-white border-gray-300 rounded bg-transparent"
             />
             <span
               className="absolute top-2 right-2 cursor-pointer"
@@ -136,7 +140,7 @@ const RegistrationForm: React.FC = () => {
               placeholder="Confirm Password"
               value={formData.confirmPassword}
               onChange={handleChange}
-              className="w-full p-2 border border-gray-300 rounded bg-transparent"
+              className="w-full p-2 border text-white border-gray-300 rounded bg-transparent"
             />
             <span
               className="absolute top-2 right-2 cursor-pointer"
@@ -147,13 +151,15 @@ const RegistrationForm: React.FC = () => {
           </div>
 
           {/* Submit Button */}
+          <Link href="/Otp-page">
           <button
             type="submit"
-            className="w-full p-2 bg-indigo-600 text-white rounded hover:bg-indigo-500"
+            className="w-full py-3 bg-purple-600 text-white text-lg rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
           >
+            
             Get OTP
           </button>
-
+        </Link>
           <p className="text-center text-sm text-gray-500 mt-2}">
             <span style={{color: 'rgba(251, 171, 36, 1)' }}>DAIICT student must register with DA Student ID*</span>
           </p>

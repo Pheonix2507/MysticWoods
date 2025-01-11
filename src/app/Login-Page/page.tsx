@@ -27,7 +27,7 @@ const LoginForm: React.FC = () => {
     >
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-0 lg:gap-[16rem]">
         {/* Login Form */}
-        <div className="bg-black bg-opacity-50 p-8 rounded-lg shadow-lg w-full max-w-md">
+        <div className="bg-black bg-opacity-75 p-8 rounded-lg shadow-lg w-full max-w-md">
           <h1 className="text-3xl font-bold text-[#ededed] text-center mb-6">Welcome Back!<br />do magic</h1>
           <form onSubmit={handleSubmit} className="space-y-4">
             {/* Email */}
@@ -59,8 +59,8 @@ const LoginForm: React.FC = () => {
             </div>
 
             {/* Forgotten Password */}
-            <div className="text-sm">
-              <Link href="/forgot-password" className="text-indigo-500 hover:underline text-right">
+            <div className="justify-end flex text-sm">
+              <Link href="/Forgot-Pass" className="text-indigo-500 hover:underline text-right">
                 Forgotten your password?
               </Link>
             </div>
@@ -68,14 +68,14 @@ const LoginForm: React.FC = () => {
             {/* Submit Button */}
             <button
               type="submit"
-              className="w-full p-2 bg-indigo-600 text-white rounded hover:bg-indigo-500"
+              className="w-full py-3 bg-purple-600 text-white text-lg rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
             >
               Continue
             </button>
 
             <div className="justify-center text-center text-sm text-indigo-600 mt-2 flex">
               Don&apos;t have an account? {" "}
-              <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/">Log in</Link></div>
+              <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Register-Page">Register here.</Link></div>
             </div>
           </form>
         </div>
