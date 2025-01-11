@@ -45,7 +45,7 @@ export default function HomePage() {
                      border border-white/20 text-white rounded-md transition-all
                      hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             >
-              <Link href="/register">Register</Link>
+              <Link href="/Register-Page">Register</Link>
             </Button>
           </div>
         </div>
