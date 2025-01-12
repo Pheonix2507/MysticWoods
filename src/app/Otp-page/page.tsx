@@ -2,6 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
+import {otpValidate} from "@/Services/auth.services";
 
 const MagicJourneyPage: React.FC = () => {
   const [code, setCode] = useState("");
@@ -13,10 +14,17 @@ const MagicJourneyPage: React.FC = () => {
     }
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
-    e.preventDefault();
-    console.log("Code Submitted:", code);
-  };
+    const handleSubmit = (e: React.FormEvent) => {
+        e.preventDefault();
+        otpValidate(code)
+            .then((res) => {
+                console.log("OTP Validated Successfully:", res);
+            })
+            .catch((err) => {
+                console.error("OTP Validation Failed:", err);
+            });
+    };
+
 
   return (
     <div className="min-h-screen bg-cover bg-center flex items-center justify-center text-white" style={{ backgroundImage: 'url(/image6.png)' }}>
@@ -49,7 +57,7 @@ const MagicJourneyPage: React.FC = () => {
             {/* Login Link */}
  <div className="justify-center text-center text-sm text-indigo-600 mt-2 flex">
             Already have an account? 
-            <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>          
+            <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>
             </div>
           </form>
         </div>

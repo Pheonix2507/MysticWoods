@@ -38,3 +38,51 @@ export const userRegister = async (registerRequest:User) => {
             throw error;
         });
 };
+
+export const otpValidate = async (otp: string) => {
+    const email = localStorage.getItem("email"); // Retrieve email from localStorage
+    if (!email) {
+        throw new Error("Email not found in localStorage");
+    }
+
+    const URL = url + "api/validate-otp"; // Endpoint for OTP validation
+    console.log("OTP Validate API URL:", URL);
+
+    const payload = {
+        email,
+        otp,
+    };
+
+    return axios
+        .post(URL, payload)
+        .then((response) => {
+            console.log("OTP Validation Response:", response.data);
+            return response.data;
+        })
+        .catch((error) => {
+            console.error("Error during OTP validation:", error);
+            throw error;
+        });
+}
+
+export const userLogin = async (email: string, password: string) => {
+    const URL = url + "api/login"; // Replace with your login endpoint
+    console.log("Login API URL:", URL);
+
+    const payload = {
+        email,
+        password,
+    };
+
+    return axios
+        .post(URL, payload)
+        .then((response) => {
+            console.log("Login Response:", response.data);
+            localStorage.setItem("token", response.data.token); // Store token in localStorage
+            return response.data;
+        })
+        .catch((error) => {
+            console.error("Error during login:", error);
+            throw error;
+        });
+};

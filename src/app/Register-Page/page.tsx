@@ -3,6 +3,7 @@
 // pages/index.tsx
 import React, { useState } from "react";
 import {userRegister} from "@/Services/auth.services";
+import Link from "next/link";
 
 const RegistrationForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +28,8 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
+    localStorage.setItem("email",formData.email)
+    console.log(formData.email)
     userRegister(formData)
         .then((res)=>{
           console.log(res)
@@ -157,7 +160,7 @@ const RegistrationForm: React.FC = () => {
           </div>
 
           {/* Submit Button */}
-          {/*<Link href="/Otp-page">*/}
+          <Link href="/Otp-page">
           <button
             type="submit"
             className="w-full py-3 bg-purple-600 text-white text-lg rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
@@ -165,7 +168,7 @@ const RegistrationForm: React.FC = () => {
             
             Get OTP
           </button>
-        {/*</Link>*/}
+        </Link>
           <p className="text-center text-sm text-gray-500 mt-2}">
             <span style={{color: 'rgba(251, 171, 36, 1)' }}>DAIICT student must register with DA Student ID*</span>
           </p>
