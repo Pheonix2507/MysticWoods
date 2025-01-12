@@ -49,7 +49,6 @@ export default function HomePage() {
             </Button>
           </div>
         </div>
-        <div className="mx-auto z-50 relative text-center text-sm text-white/90 sm:text-lg md:text-xl leading-relaxed">For accomodation and Event Registration, Login into your account</div>
       </main>
 
       <Events />
