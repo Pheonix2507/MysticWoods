@@ -84,7 +84,7 @@ const TermsAndConditions: React.FC = () => {
             <Section
               title="2. Behavioral Expectations"
               items={[
-                "Synapse&apos;25 is a safe and inclusive space for everyone. Any form of nuisance, including but not limited to disruptive behavior, harassment, or vandalism, will not be tolerated.",
+                "Synapse'25 is a safe and inclusive space for everyone. Any form of nuisance, including but not limited to disruptive behavior, harassment, or vandalism, will not be tolerated.",
                 "Attendees engaging in such activities will face immediate removal from the premises and legal consequences as per applicable laws.",
               ]}
             />
@@ -103,7 +103,7 @@ const TermsAndConditions: React.FC = () => {
             <Section
               title="5. Payment Policy"
               items={[
-                "All payments for Synapse&apos;25 events will be processed through the Razorpay payment gateway.",
+                "All payments for Synapse'25 events will be processed through the Razorpay payment gateway.",
                 "You can make payments using UPI, Debit Card, Credit Card, or Internet Banking.",
               ]}
             />
@@ -122,7 +122,7 @@ const TermsAndConditions: React.FC = () => {
                 "Synapse does not sell, rent, or trade your personal information under any circumstances. Your data is shared only with trusted service providers (e.g., payment processors or logistics partners) and solely for operational purposes.",
                 "We employ rigorous data protection measures, including advanced encryption and restricted access protocols, to protect your information from unauthorized access, alteration, or misuse.",
                 "You retain the right to access, correct, or request the deletion of your personal information at any time. You may also opt out of receiving non-essential communications by contacting us directly.",
-                "While Synapse&apos;s website may include links to third-party sites for your convenience, we are not responsible for the privacy practices or content of these external platforms.",
+                "While Synapse's website may include links to third-party sites for your convenience, we are not responsible for the privacy practices or content of these external platforms.",
                 "Synapse reserves the right to update this Privacy Policy at its sole discretion. Any revisions will be posted on this page, along with an updated “Effective Date.”",
               ]}
             />
