@@ -58,7 +58,7 @@ export default function Navbar() {
             src={CircleLogo}
             onClick={() => router.push("/")}
             alt="Synapse Logo"
-            className="w-[4rem] h-[4rem]"
+            className="w-[2rem] h-[2rem] sm:w-[4rem] sm:h-[4rem]"
             priority
           />
           <div className="navflex">
@@ -311,7 +311,7 @@ export default function Navbar() {
               className="navptags navp7"
               onClick={() => router.push("/Terms-and-condition")}
             >
-              <span>Terms And Condition</span>
+              <span className="">Terms And Condition</span>
               <div className="arrowsvgcontainer">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
