@@ -252,8 +252,8 @@ export default function Navbar() {
                                     </g>
                                 </svg>
                             </div>
-                        </a>
-                        <div className='navptags navp4' onClick={() => changePageinApp('team')} >
+                        </a>*/
+                        <div className='navptags navp4' onClick={() => router.push("/Team-page")} >
                             <span>Team</span>
                             <div className="arrowsvgcontainer">
                                 <svg xmlns="http://www.w3.org/2000/svg"
@@ -279,6 +279,7 @@ export default function Navbar() {
                                 </svg>
                             </div>
                         </div>
+                        /*
                         <div className='navptags navp5' onClick={() => changePageinApp('sponsors')} >
                             <span>Sponsors</span>
                             <div className="arrowsvgcontainer">

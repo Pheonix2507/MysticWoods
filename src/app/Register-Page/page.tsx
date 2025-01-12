@@ -86,10 +86,10 @@ const RegistrationForm: React.FC = () => {
               onChange={handleChange}
               className="w-1/2 p-2 border text-white border-gray-300 rounded bg-transparent"
             >
-              <option value="">Gender</option>
-              <option value="male">Male</option>
-              <option value="female">Female</option>
-              <option value="other">Other</option>
+              <option value="" className="bg-black text-gray-300">Gender</option>
+              <option value="male" className="bg-black text-gray-300">Male</option>
+              <option value="female" className="bg-black text-gray-300">Female</option>
+              <option value="other" className="bg-black text-gray-300">Other</option>
             </select>
           </div>
           </div>
