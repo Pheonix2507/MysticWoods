@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { Button } from "../components/ui/button";
 import synapselogo from "./assets/synapselogo.png";
-import bgImage from "./assets/background.png";
+import bgImage from "./assets/castle2.png";
 import Events from "./events";
 import Theme from "./theme";
 import Navbar from "./navbar";
@@ -14,13 +14,13 @@ import PerformersCarousel from "./carasoul";
 export default function HomePage() {
   return (
     <>
-      <main className="relative min-h-screen w-full overflow-hidden">
+      <main className="relative bg-black min-h-screen w-full overflow-hidden">
         {/* Background Image */}
         <Image
           src={bgImage}
           alt="Mystical night scene"
           fill
-          className="object-cover"
+          className="object-cover relative"
           priority
         />
 
@@ -30,9 +30,9 @@ export default function HomePage() {
         </nav>
 
         {/* Main Content */}
-        <div className="relative z-10 flex flex-col items-center justify-center min-h-[calc(100vh-80px)] px-4 text-center">
+        <div className="relative flex flex-col items-center min-h-[calc(100vh-80px)] text-center">
           {/* Centered Synapse Logo */}
-          <div className="w-full h-[50vh] flex items-center flex-col sm:gap-10">
+          <div className="w-full h-[50vh] flex items-center flex-col sm:gap-80">
             <Image
               src={synapselogo}
               alt="Synapse Logo"
@@ -45,7 +45,7 @@ export default function HomePage() {
                      border border-white/20 text-white rounded-md transition-all
                      hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
             >
-              <Link href="/register">Register</Link>
+              <Link href="/Register-Page">Register</Link>
             </Button>
           </div>
         </div>

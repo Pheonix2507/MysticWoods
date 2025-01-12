@@ -48,11 +48,11 @@ export default function Home() {
             </div>
             <div className="mt-6">
               <Image
-                className="h-24 w-48"
+                className="h-60 w-75"
                 src="/bat.gif"
                 alt="bat"
-                width={200}
-                height={100}
+                width={500}
+                height={200}
               />
             </div>
 
