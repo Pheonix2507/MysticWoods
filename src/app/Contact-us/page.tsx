@@ -4,7 +4,7 @@
 import Navbar from "../navbar";
 import React from "react";
 import Image from "next/image";
-import bgImg from "../assets/backgroundP2.jpeg";
+// import bgImg from "../assets/backgroundP2.jpeg";
 import insta from "../assets/insta.svg";
 import face from "../assets/face.svg";
 import yout from "../assets/yout.svg";
@@ -24,15 +24,15 @@ const almendra = Almendra_SC({
 
 const Contact: React.FC = () => {
   return (
-    <div className="relative w-screen h-screen bg-black">
+    <div className="backgrndstarry relative w-screen h-auto sm:h-screen bg-black">
       {/* Background Image */}
-      <Image
+      {/* <Image
         src={bgImg}
         alt="Starry night sky with bridge silhouette"
         fill
-        className="absolute inset-0 object-cover brightness-50 z-0"
+        className="object-cover brightness-50 z-0 fixed"
         priority
-      />
+      /> */}
 
       {/* Navbar */}
       <nav className="relative z-30">
@@ -40,7 +40,7 @@ const Contact: React.FC = () => {
       </nav>
 
       {/* Main Content */}
-      <div className="relative z-10 flex items-center justify-center h-full">
+      <div className="relative mt-20 sm:mt-0 z-10 flex items-center justify-center h-full">
         <div className="w-11/12 max-w-5xl bg-black bg-opacity-80 text-white rounded-xl p-6 md:p-10 border border-white flex flex-col md:flex-row gap-8">
           {/* Left Section */}
           <div className="flex-1  flex flex-col justify-between">
