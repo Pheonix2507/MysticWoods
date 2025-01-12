@@ -174,7 +174,7 @@ const RegistrationForm: React.FC = () => {
           <div className="justify-center text-center text-sm text-indigo-600 mt-2 flex">
             Already have an account? 
             {/*<div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>          */}
-            <div className="text-center text-sm text-indigo-600 hover:underline ml-2">>Log in</div>
+            <div className="text-center text-sm text-indigo-600 hover:underline ml-2">Log in</div>
             </div>
         </form>
       </div>
