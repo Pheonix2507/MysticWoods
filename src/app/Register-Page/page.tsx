@@ -2,7 +2,9 @@
 "use client"
 // pages/index.tsx
 import React, { useState } from "react";
+import {User} from "../../types/auth.types"
 import Link from 'next/link';
+import {userRegister} from "@/Services/auth.services";
 
 const RegistrationForm: React.FC = () => {
   const [formData, setFormData] = useState({
@@ -27,6 +29,12 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
+    userRegister(formData)
+        .then((res)=>{
+          console.log(res)
+        }).catch((err)=>{
+          console.log(err)
+    })
     e.preventDefault();
     console.log("Form Data Submitted:", formData);
   };
@@ -151,7 +159,7 @@ const RegistrationForm: React.FC = () => {
           </div>
 
           {/* Submit Button */}
-          <Link href="/Otp-page">
+          {/*<Link href="/Otp-page">*/}
           <button
             type="submit"
             className="w-full py-3 bg-purple-600 text-white text-lg rounded-md hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500 transition duration-300"
@@ -159,13 +167,14 @@ const RegistrationForm: React.FC = () => {
             
             Get OTP
           </button>
-        </Link>
+        {/*</Link>*/}
           <p className="text-center text-sm text-gray-500 mt-2}">
             <span style={{color: 'rgba(251, 171, 36, 1)' }}>DAIICT student must register with DA Student ID*</span>
           </p>
           <div className="justify-center text-center text-sm text-indigo-600 mt-2 flex">
             Already have an account? 
-            <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>          
+            {/*<div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>          */}
+            <div className="text-center text-sm text-indigo-600 hover:underline ml-2">>Log in</div>
             </div>
         </form>
       </div>
