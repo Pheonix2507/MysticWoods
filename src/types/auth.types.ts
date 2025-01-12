@@ -7,7 +7,7 @@ export interface CustomJwtPayload extends JwtPayload {
 export interface User {
     first_name: string,
     last_name: string,
-    phone_number: number,
+    phone_number: string,
     DOB: string,
     gender: string,
     Clg: string,

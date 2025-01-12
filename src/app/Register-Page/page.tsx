@@ -2,8 +2,6 @@
 "use client"
 // pages/index.tsx
 import React, { useState } from "react";
-import {User} from "../../types/auth.types"
-import Link from 'next/link';
 import {userRegister} from "@/Services/auth.services";
 
 const RegistrationForm: React.FC = () => {

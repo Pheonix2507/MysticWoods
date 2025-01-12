@@ -13,7 +13,7 @@ export const getConfig = (): AxiosRequestConfig => {
     } as AxiosRequestConfig;
 };
 
-export const userRegister = async (registerRequest) => {
+export const userRegister = async (registerRequest:User) => {
     const URL = url + "api/register";
     console.log(URL)
     const payload = {
