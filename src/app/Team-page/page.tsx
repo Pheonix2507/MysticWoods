@@ -6,6 +6,7 @@ import Team from "../assets/Team.svg"
 import Team2 from "../assets/Team2.svg"
 import { IoMdArrowBack } from "react-icons/io";
 import { useRouter } from "next/navigation";
+import Foort from "../End-App/page"
 
 const TeamPage: React.FC = () => {
       const router = useRouter();
@@ -133,6 +134,7 @@ const TeamPage: React.FC = () => {
       </section>
 
       {/* Footer Section */}
+        <Foort/>
     </div>
   );
 };

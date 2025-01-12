@@ -381,6 +381,8 @@ button {
     padding: 0px;
     font-size: 12vw;
     line-height: 70px;
+    display: grid;
+    grid-template-columns: 1fr;
   }
 
   .navflex {
@@ -406,8 +408,6 @@ button {
     -o-transition: all linear 0.314s;
     transition: all linear 0.314s;
     transform: translateX(-300%);
-    display: grid;
-    grid-template-columns: 1fr 1fr;
   }
 
   .navptags:hover {
@@ -715,3 +715,10 @@ svg {
 }
 
 
+
+.backgrndstarry{
+  background-image: url('/backgroundP2.jpeg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+}
