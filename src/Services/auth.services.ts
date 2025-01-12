@@ -1,4 +1,4 @@
-import axios, { AxiosError, AxiosRequestConfig } from "axios";
+import axios, {  AxiosRequestConfig } from "axios";
 import {User} from "@/types/auth.types";
 
 export const url =  process.env.NEXT_PUBLIC_baseUrl;
