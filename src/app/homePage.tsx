@@ -1,61 +1,305 @@
 "use client";
 
 import Image from "next/image";
-import Link from "next/link";
-import { Button } from "../components/ui/button";
-import synapselogo from "./assets/synapselogo.png";
-import bgImage from "./assets/castle2.png";
-import Events from "./events";
-import Theme from "./theme";
+import React, { useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import StarryBackground from "@/components/StarryBackground";
+
+// import { Roboto } from "next/font/google";
+import { Almendra_SC } from "next/font/google";
 import Navbar from "./navbar";
-import About from "./about";
-import PerformersCarousel from "./carasoul";
+import Carasoul from "@/components/Carasoul"
 
-export default function HomePage() {
-  return (
-    <>
-      <main className="relative bg-black min-h-screen w-full overflow-hidden">
-        {/* Background Image */}
-        <Image
-          src={bgImage}
-          alt="Mystical night scene"
-          fill
-          className="object-cover relative"
-          priority
-        />
+const almendra = Almendra_SC({
+  subsets: ["latin"],
+  weight: "400",
+});
 
-        {/* Navigation */}
-        <nav className="relative z-50 flex justify-between items-center ">
+
+
+const Parallax = () => {
+    useEffect(() => {
+        // Register ScrollTrigger plugin
+        gsap.registerPlugin(ScrollTrigger);
+
+        // const speed = 100;
+
+        // ==============Mountains=================================
+        gsap.to(".mountainBB", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 2
+            },
+            x: "-100%",
+        })
+
+        gsap.to(".mountainRB", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 3
+            },
+            y: "150%",
+        })
+
+        gsap.to(".mountainm15", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 3
+            },
+            x: "150%",
+        })
+
+        gsap.to(".mountainR", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 4
+            },
+            x: "100%",
+        })
+
+        gsap.to(".mountainLB", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 4
+            },
+            x: "-100%",
+        })
+
+        gsap.to(".mountainL", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 3
+            },
+            x: "-100%",
+        })
+        // =========================================================
+
+        gsap.to(".synapselogo", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                // pin: true,
+                scrub: 1
+            },
+            y: "100%",
+        })
+
+        gsap.to(".castle", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                // pin: true,
+                scrub: 1
+            },
+            y: "100%",
+        })
+
+        // ===================TREES=================================
+        gsap.to(".tree", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "center 45%",
+                end: "center top",
+                scrub: 3
+            },
+            y: "100%",
+        })
+        // =========================================================
+
+        gsap.to(".btmhomes", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "80% 45%",
+                end: "80% 30%",
+                scrub: 3
+            },
+            y: "-50%",
+        })
+
+        gsap.to(".broom", {
+            scrollTrigger: {
+                trigger: ".scene1",
+                start: "80% 45%",
+                end: "80% 30%",
+                scrub: 3
+            },
+            y: "-70%",
+            x: "400%"
+        })
+
+        return () => {
+            // Clean up ScrollTriggers on unmount
+            ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
+        };
+    }, []);
+
+    return (
+        <div className="scrollElement">
           <Navbar />
-        </nav>
+            <div className="scene1 h-[100vh]">
+            <StarryBackground />
+                <img
+                    className="mountainBB"
+                    src="/m14.svg"
+                    alt="Mountain"
+                />
+                <img
+                    className="mountainRB"
+                    src="/m13.svg"
+                    alt="Mountain"
+                />
+                <img
+                    className="mountainm15"
+                    src="/m15.svg"
+                    alt="Mountain"
+                />
+                <img
+                    className="mountainR"
+                    src="/mtree.svg"
+                    alt="Mountain"
+                />
+                <div className="flex justify-center items-center w-full">
+                    <img
+                        className="synapselogo"
+                        src="/synapselogo.svg"
+                        alt="synapselogo"
+                    />
+                </div>
+                <img
+                    className="mountainLB"
+                    src="/m11.svg"
+                    alt="Mountain"
+                />
+                <div className="flex justify-center items-center w-full">
+                    <img
+                        className="castle"
+                        src="/castle1.svg"
+                        alt="castle"
+                    />
+                </div>
+                <img
+                    className="mountainL"
+                    src="/mgrass.svg"
+                    alt="Mountain"
+                />
 
-        {/* Main Content */}
-        <div className="relative flex flex-col items-center min-h-[calc(100vh-80px)] text-center">
-          {/* Centered Synapse Logo */}
-          <div className="w-full h-[50vh] flex items-center flex-col sm:gap-80">
-            <Image
-              src={synapselogo}
-              alt="Synapse Logo"
-              className="w-80 p-5 sm:w-[40vw] h-fit"
-            />
-            {/* Register Button */}
-            <Button
-              asChild
-              className="px-8 py-6 text-lg bg-black/30 hover:bg-black/40 backdrop-blur-sm
-                     border border-white/20 text-white rounded-md transition-all
-                     hover:scale-105 hover:shadow-[0_0_20px_rgba(255,255,255,0.2)]"
-            >
-              <Link href="/Register-Page">Register</Link>
-            </Button>
-          </div>
+                <img
+                    className="tree tree1" // tree
+                    src="/tree.svg"
+                    alt="Tree"
+                />
+                <img
+                    className="tree tree2" // tree
+                    src="/tree.svg"
+                    alt="Tree"
+                />
+                <img
+                    className="tree tree3" // tree
+                    src="/tree.svg"
+                    alt="Tree"
+                />
+                <img
+                    className="tree tree4" // tree
+                    src="/tree.svg"
+                    alt="Tree"
+                />
+                <img
+                    className="tree tree5" // tree
+                    src="/tree.svg"
+                    alt="Tree"
+                />
+                <img
+                    className="tree tree6" // tree
+                    src="/tree.svg"
+                    alt="Tree"
+                />
+            </div>
+
+            <div className="scene2 w-full h-[165vh]">
+                <StarryBackground />
+                <div className="flex w-[50vw] h-fit">
+                    <div>
+                        <p className={`ml-4 mt-[4rem] pl-10 text-6xl ${almendra.className}`}>
+                            THEME
+                        </p>
+                        <p className={`ml-4 mt-3 pl-10 text-lg ${almendra.className}`}>
+                        Step into the Wizarding Whirl, our enchanting college festival celebrating diversity, 
+                        creativity, and camaraderie. Experience mesmerizing musical performances, interactive 
+                        potion-making workshops, and a spellbinding lineup of events that capture the magic of 
+                        our vibrant community. Let this unforgettable celebration awaken your inner wizard and
+                        unite us all in the spirit of magic.
+                        </p>
+                    </div>
+                </div>
+                <img
+                    className="btmhomes"
+                    src="/bottom homes.svg"
+                    alt="Homes"
+                />
+                <img
+                    className="broom"
+                    src="/quidditch-harry-potter.svg"
+                    alt="Broom"
+                />
+                <div className="flex justify-center items-center">
+                    <p className={`absolute top-[100vh] text-6xl ${almendra.className}`}>
+                        EXPLORE EVENTS
+                    </p>
+                    <div className="absolute top-[115vh] flex justify-center items-center">
+                        <div className="grid grid-cols-4 gap-16">
+                            <Image
+                                className="flag1 cursor-pointer"
+                                src="/flag1.png"
+                                alt="Flags"
+                                width={150}
+                                height={150}
+                            />
+                            <Image
+                                className="flag2 cursor-pointer"
+                                src="/flag2.png"
+                                alt="Flags"
+                                width={150}
+                                height={150}
+                            />
+                            <Image
+                                className="flag3 cursor-pointer"
+                                src="/flag3.png"
+                                alt="Flags"
+                                width={150}
+                                height={150}
+                            />
+                            <Image
+                                className="flag4 cursor-pointer"
+                                src="/flag4.png"
+                                alt="Flags"
+                                width={150}
+                                height={150}
+                            />
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div className="scene3 h-[100vh]">
+                <StarryBackground />
+                <Carasoul />
+            </div>
         </div>
-      </main>
-
-      <Events />
-      <Theme />
-      <PerformersCarousel />
-      <About />
-      {/* <MainAboutUS /> */}
-    </>
-  );
+    )
 }
+
+export default Parallax;

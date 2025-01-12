@@ -4,7 +4,7 @@
 
 body {
   font-family: Arial, Helvetica, sans-serif;
-  overflow: auto;
+  overflow-x: hidden;
 }
 
 @layer base {
@@ -448,3 +448,270 @@ button {
   z-index: -1;
   opacity: 0.5;
 }
+
+
+
+
+
+
+@keyframes twinkling {
+  0% { opacity: 0.8; }
+  50% { opacity: 1; }
+  100% { opacity: 0.8; }
+}
+
+.stars {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background: transparent;
+  z-index: -1;
+  top: 0;
+  left: 0;
+}
+
+.star {
+  position: absolute;
+  width: 2px;
+  height: 2px;
+  background: white;
+  border-radius: 50%;
+  animation: twinkling 2s infinite;
+  opacity: 0.8;
+}
+
+.wrapper {
+  position: relative;
+}
+/* 
+svg {
+  display: block;
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  z-index: 3;
+  top: 0;
+  left: 0;
+} */
+
+.scrollElement {
+  position: relative;
+  height: fit-content;
+  width: 100%;
+  top: 0;
+  z-index: 4;
+  color: white;
+}
+
+.btn {
+  position: fixed;
+  bottom: 5%;
+  right: 0px;
+  transform: translateX(-50%);
+  border: 1px solid #fff;
+  border-radius: 5px;
+  font-size: 0.9rem;
+  padding: 0.5rem 0.7em;
+  background-color: transparent;
+  color: #ffffff;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  -webkit-font-smoothing: antialiased;
+  cursor: pointer;
+  transition: all .3s;
+  z-index: 11;
+}
+
+.btn_works {
+  left: 100px;
+  right: unset;
+  text-decoration: none;
+}
+
+.btn:hover {
+  background: #ffffff;
+  color: #1B1734;
+}
+
+/* MARK: ---0-490 Mobile */
+@media (max-width: 490px) {
+
+  #text,
+  #arrow {
+      transform-origin: 50% 50%;
+      transform: translateY(-120px) scale(0.8);
+  }
+
+  #info2 {
+      transform-origin: 50% 50%;
+      transform: translateY(-120px) scale(0.8);
+  }
+}
+
+.scene1 {
+  position: relative;
+  z-index: 1; /* Lower layer */
+}
+
+.scene2 {
+  position: relative;
+  z-index: 1; /* Higher layer */
+  /* overflow: hidden; Prevent elements from scene1 from showing */
+}
+
+.scene3 {
+  position: relative;
+  z-index: 3; /* Higher layer */
+  overflow: hidden; /* Prevent elements from scene1 from showing */
+}
+
+
+.mountainBB{
+  position: fixed;
+  top: 30vh;
+  width: 50vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.mountainm15{
+  position: fixed;
+  top: 45vh;
+  left: 30vw;
+  width: 50vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.mountainRB{
+  position: fixed;
+  top: 45vh;
+  left: 15vw;
+  width: 60vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.mountainR{
+  position: fixed;
+  transform: scaleX(-1);
+  top: 8vh;
+  left: 0vw;
+  width: 100vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.mountainLB{
+  position: fixed;
+  top: 33vh;
+  left: 0vw;
+  width: 60vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.mountainL{
+  position: fixed;
+  transform: scaleX(-1);
+  top: 60vh;
+  left: 0vw;
+  width: 50vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+.castle{
+  position: absolute;
+  transform: scaleX(-1);
+  top: 18vh;
+  width: 100vw;
+  /* height: fit-content; */
+  object-fit: cover;
+  /* filter: drop-shadow(0px 0px 20px #fffae7); */
+}
+
+.synapselogo{
+  position: absolute;
+  top: 5vh;
+  height: fit-content;
+  object-fit: cover;
+  z-index: 20;
+  filter: drop-shadow(0px 0px 20px #fffae7);
+}
+
+.tree1{
+  position: fixed;
+  top: 50vh;
+  left: 0;
+  height: fit-content;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.tree2{
+  position: fixed;
+  top: 60vh;
+  left: 8vw;
+  height: fit-content;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.tree3{
+  position: fixed;
+  top: 50vh;
+  left: 15vw;
+  /* width: 8vw; */
+  height: fit-content;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.tree4{
+  position: fixed;
+  top: 70vh;
+  left: 25vw;
+  width: 10vw;
+  height: fit-content;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.tree5{
+  position: fixed;
+  top: 60vh;
+  left: 30vw;
+  width: 13vw;
+  height: fit-content;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.tree6{
+  position: fixed;
+  top: 60vh;
+  left: 5vw;
+  height: fit-content;
+  object-fit: cover;
+  z-index: 2;
+}
+
+.btmhomes{
+  position: absolute;
+  top: 75vh;
+  /* bottom: -10vh; */
+  height: fit-content;
+  object-fit: cover;
+}
+
+.broom{
+  position: absolute;
+  transform: scaleX(-1);
+  top: 20vh;
+  left: -20vw;
+  width: 20vw;
+  height: fit-content;
+  object-fit: cover;
+}
+
+
