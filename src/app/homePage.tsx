@@ -10,10 +10,11 @@ import StarryBackground from "@/components/StarryBackground";
 import { Almendra_SC } from "next/font/google";
 import Navbar from "./navbar";
 import Carasoul from "@/components/Carasoul"
+import { Button } from "@/components/ui/button";
 
 const almendra = Almendra_SC({
-  subsets: ["latin"],
-  weight: "400",
+    subsets: ["latin"],
+    weight: "400",
 });
 
 
@@ -142,6 +143,48 @@ const Parallax = () => {
             x: "400%"
         })
 
+        // ===================FLAGS=================================
+        gsap.to(".flag1", {
+            scrollTrigger: {
+                trigger: ".scene3",
+                start: "top 45%",
+                end: "top 40%",
+                scrub: 3
+            },
+            y: "0%",
+        })
+
+        gsap.to(".flag2", {
+            scrollTrigger: {
+                trigger: ".scene3",
+                start: "8% 45%",
+                end: "8% 40%",
+                scrub: 3
+            },
+            y: "0%",
+        })
+
+        gsap.to(".flag3", {
+            scrollTrigger: {
+                trigger: ".scene3",
+                start: "12% 45%",
+                end: "12% 40%",
+                scrub: 3
+            },
+            y: "0%",
+        })
+
+        gsap.to(".flag4", {
+            scrollTrigger: {
+                trigger: ".scene3",
+                start: "15% 45%",
+                end: "15% 40%",
+                scrub: 3
+            },
+            y: "0%",
+        })
+        // =========================================================
+
         return () => {
             // Clean up ScrollTriggers on unmount
             ScrollTrigger.getAll().forEach((trigger) => trigger.kill());
@@ -150,9 +193,9 @@ const Parallax = () => {
 
     return (
         <div className="scrollElement">
-          <Navbar />
+            <Navbar />
             <div className="scene1 h-[100vh]">
-            <StarryBackground />
+                <StarryBackground />
                 <img
                     className="mountainBB"
                     src="/m14.svg"
@@ -228,9 +271,15 @@ const Parallax = () => {
                     src="/tree.svg"
                     alt="Tree"
                 />
+
+                <div className="w-full h-full flex justify-center items-center">
+                    <Button className="absolute bg-[#09090b] border-solid border-2 border-[#27272a] text-lg p-6 rounded-2xl drop-shadow-[0px_0px_4px_#fffae7]">
+                        Register
+                    </Button>
+                </div>
             </div>
 
-            <div className="scene2 w-full h-[165vh]">
+            <div className="scene2 w-full h-[100vh]">
                 <StarryBackground />
                 <div className="flex w-[50vw] h-fit">
                     <div>
@@ -238,11 +287,11 @@ const Parallax = () => {
                             THEME
                         </p>
                         <p className={`ml-4 mt-3 pl-10 text-lg ${almendra.className}`}>
-                        Step into the Wizarding Whirl, our enchanting college festival celebrating diversity, 
-                        creativity, and camaraderie. Experience mesmerizing musical performances, interactive 
-                        potion-making workshops, and a spellbinding lineup of events that capture the magic of 
-                        our vibrant community. Let this unforgettable celebration awaken your inner wizard and
-                        unite us all in the spirit of magic.
+                            Step into the Wizarding Whirl, our enchanting college festival celebrating diversity,
+                            creativity, and camaraderie. Experience mesmerizing musical performances, interactive
+                            potion-making workshops, and a spellbinding lineup of events that capture the magic of
+                            our vibrant community. Let this unforgettable celebration awaken your inner wizard and
+                            unite us all in the spirit of magic.
                         </p>
                     </div>
                 </div>
@@ -256,35 +305,40 @@ const Parallax = () => {
                     src="/quidditch-harry-potter.svg"
                     alt="Broom"
                 />
-                <div className="flex justify-center items-center">
-                    <p className={`absolute top-[100vh] text-6xl ${almendra.className}`}>
-                        EXPLORE EVENTS
-                    </p>
-                    <div className="absolute top-[115vh] flex justify-center items-center">
+            </div>
+            <div className="scene3 h-[60vh]">
+                <StarryBackground />
+                <div className="h-fit flex flex-col justify-center items-center">
+                    <div className="h-fit w-full flex justify-center items-center">
+                        <p className={`text-6xl ${almendra.className}`}>
+                            EXPLORE EVENTS
+                        </p>
+                    </div>
+                    <div className="flags  h-fit w-full pt-8 flex justify-center items-center">
                         <div className="grid grid-cols-4 gap-16">
                             <Image
-                                className="flag1 cursor-pointer"
+                                className="flag1 translate-y-[-150%] cursor-pointer"
                                 src="/flag1.png"
                                 alt="Flags"
                                 width={150}
                                 height={150}
                             />
                             <Image
-                                className="flag2 cursor-pointer"
+                                className="flag2 translate-y-[-150%] cursor-pointer"
                                 src="/flag2.png"
                                 alt="Flags"
                                 width={150}
                                 height={150}
                             />
                             <Image
-                                className="flag3 cursor-pointer"
+                                className="flag3 translate-y-[-150%] cursor-pointer"
                                 src="/flag3.png"
                                 alt="Flags"
                                 width={150}
                                 height={150}
                             />
                             <Image
-                                className="flag4 cursor-pointer"
+                                className="flag4 translate-y-[-150%] cursor-pointer"
                                 src="/flag4.png"
                                 alt="Flags"
                                 width={150}
@@ -294,7 +348,7 @@ const Parallax = () => {
                     </div>
                 </div>
             </div>
-            <div className="scene3 h-[100vh]">
+            <div className="scene4 h-[100vh]">
                 <StarryBackground />
                 <Carasoul />
             </div>
