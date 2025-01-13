@@ -92,7 +92,7 @@ const FashionEvents: React.FC = () => {
                 <h2 className="text-2xl font-bold mb-4">{events[index].name}</h2>
                 <p className={`${roboto.className} mb-6`}>{events[index].description}</p>
                 <button className="w-full bg-purple-900 hover:bg-purple-700 text-white font-semibold py-2 rounded" disabled>
-                  Registration Coming Soon
+                  Registration Opening Soon ...
                 </button>
               </div>
             </div>

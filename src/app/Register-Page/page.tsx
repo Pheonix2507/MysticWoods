@@ -100,9 +100,9 @@ const RegistrationForm: React.FC = () => {
     }
   };
 
-    const isFormValid = () => {
-    return Object.values(formData).every(value => value.trim() !== "") && 
-           Object.values(errors).every(error => error === "");
+  const isFormValid = () => {
+    return Object.values(formData).every(value => value.trim() !== "") &&
+      Object.values(errors).every(error => error === "");
   };
 
   const handleSubmit = (e: React.FormEvent) => {
@@ -264,21 +264,21 @@ const RegistrationForm: React.FC = () => {
           </div>
 
           <Link href="/Otp-page">
-          <button
-            type="submit"
-              className={`w-full py-3 text-lg rounded-md transition duration-300 ${
-                isFormValid()
+            <button
+              type="submit"
+              disabled={true}
+              className={`w-full py-3 text-lg rounded-md transition duration-300 ${isFormValid()
                   ? "bg-purple-600 text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
                   : "bg-gray-600 text-gray-400 cursor-not-allowed"
-              }`}
-          >
-            Get OTP
-          </button>
-        </Link>
-          <p className="text-center text-sm text-gray-500 mt-2}">
-            <span style={{color: 'rgba(251, 171, 36, 1)' }}>DAIICT student must register with DA Student ID*</span>
+                }`}
+            >
+              Registration Opening Soon
+            </button>
+          </Link>
+          <p className="text-center text-sm text-gray-500 mt-2">
+            <span style={{ color: 'rgba(251, 171, 36, 1)' }}>DAIICT student must register with DA Student ID*</span>
           </p>
-          <div className="text-center text-sm text-indigo-600 hover:underline ml-2 text-[3vh]">Log In</div>
+          {/* <div className="text-center text-sm text-indigo-600 hover:underline ml-2 text-[3vh]">Log In</div> */}
         </form>
       </div>
       <div className="order-none lg:order-2 lg:mb-0 flex-shrink-1">
