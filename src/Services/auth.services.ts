@@ -27,7 +27,7 @@ export const userRegister = async (registerRequest:User) => {
         password: registerRequest.password
     }
     return axios
-        .post<User>(URL, payload)
+        .post(URL, payload)
         .then((response) => {
             console.log(response)
             return response.data;

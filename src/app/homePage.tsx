@@ -6,11 +6,11 @@ import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import StarryBackground from "@/components/StarryBackground";
 
-// import { Roboto } from "next/font/google";
 import { Almendra_SC } from "next/font/google";
 import Navbar from "./navbar";
 import Carasoul from "@/components/Carasoul"
 import { Button } from "@/components/ui/button";
+import { useRouter } from "next/navigation";
 
 const almendra = Almendra_SC({
     subsets: ["latin"],
@@ -20,9 +20,11 @@ const almendra = Almendra_SC({
 
 
 const Parallax = () => {
+    const router = useRouter();
     useEffect(() => {
         // Register ScrollTrigger plugin
         gsap.registerPlugin(ScrollTrigger);
+
 
         // const speed = 100;
 
@@ -273,7 +275,7 @@ const Parallax = () => {
                 />
 
                 <div className="w-full h-full flex justify-center items-center">
-                    <Button className="absolute bg-[#09090b] border-solid border-2 border-[#27272a] text-lg p-6 rounded-2xl drop-shadow-[0px_0px_4px_#fffae7]">
+                    <Button onClick={() => { router.push('/Register-Page') }} className="absolute bg-[#09090b] border-solid border-2 border-[#27272a] text-lg p-6 rounded-2xl drop-shadow-[0px_0px_4px_#fffae7]">
                         Register
                     </Button>
                 </div>

@@ -3,8 +3,10 @@
 import React, { useState } from "react";
 import Link from "next/link";
 import {otpValidate} from "@/Services/auth.services";
+import { useRouter } from "next/navigation";
 
 const MagicJourneyPage: React.FC = () => {
+  const router = useRouter();
   const [code, setCode] = useState("");
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -19,6 +21,7 @@ const MagicJourneyPage: React.FC = () => {
         otpValidate(code)
             .then((res) => {
                 console.log("OTP Validated Successfully:", res);
+                router.push('/');
             })
             .catch((err) => {
                 console.error("OTP Validation Failed:", err);

@@ -1,10 +1,13 @@
 "use client"
 import React, { useState } from "react";
-import {userRegister} from "@/Services/auth.services";
-
-import Link from "next/link";
+import { userRegister } from "@/Services/auth.services";
+import { useRouter } from "next/navigation";
+import { useToast } from "@/hooks/use-toast"
+import { Loader } from "lucide-react";
 
 const RegistrationForm: React.FC = () => {
+  const router = useRouter();
+  const { toast } = useToast();
   const [formData, setFormData] = useState({
     first_name: "",
     last_name: "",
@@ -31,6 +34,7 @@ const RegistrationForm: React.FC = () => {
 
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
+  const [loading, setloading] = useState(false);
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement>) => {
     const { name, value } = e.target;
@@ -106,14 +110,9 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
-    localStorage.setItem("email",formData.email)
-    console.log(formData.email)
-    userRegister(formData)
-        .then((res)=>{
-          console.log(res)
-        }).catch((err)=>{
-          console.log(err)
-    })
+    // localStorage.setItem("email", formData.email)
+    // console.log(formData.email)
+
 
     e.preventDefault();
 
@@ -133,13 +132,29 @@ const RegistrationForm: React.FC = () => {
     // Check if there are any errors
     const hasErrors = Object.values(newErrors).some(error => error !== '');
     if (!hasErrors) {
+      setloading(true);
       userRegister(formData)
-        .then(res => {
-          console.log("Registration successful", res);
+        .then((res) => {
+          console.log(res)
+          toast({
+            title: 'Success',
+            description: res?.data?.message ?? 'Registration Successful',
+            // status: 'success', // This typically controls the color theme
+            duration: 3000,
+          });
+          router.push('/Otp-page')
+        }).catch((err) => {
+          console.log(err)
+          toast({
+            title: 'Error',
+            description: err?.response?.data?.message ?? 'Something went wrong',
+            variant: 'destructive',
+            // status: 'success', // This typically controls the color theme
+            duration: 3000,
+          })
+        }).finally(() => {
+          setloading(false);
         })
-        .catch(err => {
-          console.log("Error registering user", err);
-        });
     } else {
       console.log("Form has errors:", newErrors);
     }
@@ -263,18 +278,20 @@ const RegistrationForm: React.FC = () => {
             {errors.confirmPassword && <p className="text-red-500 text-xs italic">{errors.confirmPassword}</p>}
           </div>
 
-          <Link href="/Otp-page">
-            <button
-              type="submit"
-              disabled={true}
-              className={`w-full py-3 text-lg rounded-md transition duration-300 ${isFormValid()
-                  ? "bg-purple-600 text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
-                  : "bg-gray-600 text-gray-400 cursor-not-allowed"
-                }`}
-            >
-              Registration Opening Soon
-            </button>
-          </Link>
+          <button
+            type="submit"
+            // disabled={true}
+            className={`w-full py-3 text-lg rounded-md transition duration-300 ${isFormValid()
+              ? "bg-purple-600 text-white hover:bg-purple-700 focus:outline-none focus:ring-2 focus:ring-purple-500"
+              : "bg-gray-600 text-gray-400 cursor-not-allowed"
+              }`}
+          >
+            <span className=" uppercase">
+              {loading ? <Loader/> : 'Get Otp'}
+            </span>
+          </button>
+          {/* <Link href="/Otp-page">
+          </Link> */}
           <p className="text-center text-sm text-gray-500 mt-2">
             <span style={{ color: 'rgba(251, 171, 36, 1)' }}>DAIICT student must register with DA Student ID*</span>
           </p>
