@@ -1,7 +1,9 @@
 "use client";
 
-import React, { useState } from "react";
 import Link from 'next/link'
+import React, { useState } from "react";
+import { userLogin } from "@/Services/auth.services"; // Ensure this is the correct path to the API function
+
 const LoginForm: React.FC = () => {
   const [formData, setFormData] = useState({
     email: "",
@@ -18,6 +20,16 @@ const LoginForm: React.FC = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     console.log("Login Data Submitted:", formData);
+
+    userLogin(formData.email, formData.password)
+        .then((res) => {
+          console.log("Login Successful:", res);
+          // Add logic to redirect or update the UI after successful login
+        })
+        .catch((err) => {
+          console.error("Login Failed:", err);
+          // Add logic to display an error message
+        });
   };
 
   return (

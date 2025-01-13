@@ -1,6 +1,7 @@
 "use client"
 import React, { useState } from "react";
-import { userRegister } from "@/Services/auth.services";
+import {userRegister} from "@/Services/auth.services";
+
 import Link from "next/link";
 
 const RegistrationForm: React.FC = () => {
@@ -105,6 +106,15 @@ const RegistrationForm: React.FC = () => {
   };
 
   const handleSubmit = (e: React.FormEvent) => {
+    localStorage.setItem("email",formData.email)
+    console.log(formData.email)
+    userRegister(formData)
+        .then((res)=>{
+          console.log(res)
+        }).catch((err)=>{
+          console.log(err)
+    })
+
     e.preventDefault();
 
     // Perform synchronous validation on all fields before attempting to submit
@@ -252,6 +262,7 @@ const RegistrationForm: React.FC = () => {
             </span>
             {errors.confirmPassword && <p className="text-red-500 text-xs italic">{errors.confirmPassword}</p>}
           </div>
+
           <Link href="/Otp-page">
             <button
               type="submit"
