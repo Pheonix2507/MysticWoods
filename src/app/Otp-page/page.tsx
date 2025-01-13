@@ -2,7 +2,7 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import {otpValidate} from "@/Services/auth.services";
+import { otpValidate } from "@/Services/auth.services";
 import { useRouter } from "next/navigation";
 
 const MagicJourneyPage: React.FC = () => {
@@ -16,17 +16,17 @@ const MagicJourneyPage: React.FC = () => {
     }
   };
 
-    const handleSubmit = (e: React.FormEvent) => {
-        e.preventDefault();
-        otpValidate(code)
-            .then((res) => {
-                console.log("OTP Validated Successfully:", res);
-                router.push('/');
-            })
-            .catch((err) => {
-                console.error("OTP Validation Failed:", err);
-            });
-    };
+  const handleSubmit = (e: React.FormEvent) => {
+    e.preventDefault();
+    otpValidate(code)
+      .then((res) => {
+        console.log("OTP Validated Successfully:", res);
+        router.push('/');
+      })
+      .catch((err) => {
+        console.error("OTP Validation Failed:", err);
+      });
+  };
 
 
   return (
@@ -58,21 +58,21 @@ const MagicJourneyPage: React.FC = () => {
             </button>
 
             {/* Login Link */}
- <div className="justify-center text-center text-sm text-indigo-600 mt-2 flex">
-            Already have an account? 
-            <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>
+            <div className="justify-center text-center text-sm text-indigo-600 mt-2 flex">
+              Already have an account?
+              <div className="text-center text-sm text-indigo-600 hover:underline ml-2"><Link href="/Login-Page">Log in</Link></div>
             </div>
           </form>
         </div>
 
         {/* Logo Section */}
-              <div className="order-none lg:order-2 lg:mb-0 flex-shrink-1">
-        <img
-          src="/logo.svg" // Replace with your SVG logo path
-          alt="Logo"
-          className="w-[70vw] h-[30vh] lg:w-[70vw] lg:h-[50vh] xl:w-[70vw] xl:h-[50vh] mx-auto"
-        />
-      </div>
+        <div className="order-none lg:order-2 lg:mb-0 flex-shrink-1">
+          <img
+            src="/logo.svg" // Replace with your SVG logo path
+            alt="Logo"
+            className="w-[70vw] h-[30vh] lg:w-[70vw] lg:h-[50vh] xl:w-[70vw] xl:h-[50vh] mx-auto"
+          />
+        </div>
       </div>
     </div>
   );
